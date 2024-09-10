@@ -7,12 +7,15 @@
     <title>Ecommerce</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Add any custom styles you need here */
+    </style>
 </head>
 
 <body>
+    <!-- Header Section -->
     <section id="header">
         <a href="#"><img src="images/logo.jpg" class="logo" alt=""></a>
-
         <div>
             <ul id="navbar">
                 <li><a href="index.html">Home</a></li>
@@ -30,15 +33,13 @@
         </div>
     </section>
 
-
+    <!-- Page Header -->
     <section id="page-header" class="about-header">
-       
         <h2>#Cart</h2>
-       
-        <p>Add your coupon code & save upto 70%</p>
-        
+        <p>Add your coupon code & save up to 70%</p>
     </section>
 
+    <!-- Cart Section -->
     <section id="cart" class="section-p1">
         <table width="100%">
             <thead>
@@ -52,42 +53,43 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                <tr id="item1">
+                    <td><a href="#" onclick="removeItem('item1')"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="images/f0.avif" alt=""></td>
                     <td>Cartoon Astronaut T-Shirts</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
+                    <td><input type="number" value="1" min="1" onchange="updateItemSubtotal(this)"></td>
+                    <td class="item-subtotal">$118.19</td>
                 </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                <tr id="item2">
+                    <td><a href="#" onclick="removeItem('item2')"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="images/f56.webp" alt=""></td>
                     <td>Cartoon Astronaut T-Shirts</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
+                    <td><input type="number" value="1" min="1" onchange="updateItemSubtotal(this)"></td>
+                    <td class="item-subtotal">$118.19</td>
                 </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                <tr id="item3">
+                    <td><a href="#" onclick="removeItem('item3')"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="images/f5.jpeg" alt=""></td>
                     <td>Cartoon Astronaut T-Shirts</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
+                    <td><input type="number" value="1" min="1" onchange="updateItemSubtotal(this)"></td>
+                    <td class="item-subtotal">$118.19</td>
                 </tr>
-                <tr>
-                    <td><a href="#"><i class="far fa-times-circle"></i></a></td>
+                <tr id="item4">
+                    <td><a href="#" onclick="removeItem('item4')"><i class="far fa-times-circle"></i></a></td>
                     <td><img src="images/f15.jpg" alt=""></td>
                     <td>Cartoon Astronaut T-Shirts</td>
                     <td>$118.19</td>
-                    <td><input type="number" value="1"></td>
-                    <td>$118.19</td>
+                    <td><input type="number" value="1" min="1" onchange="updateItemSubtotal(this)"></td>
+                    <td class="item-subtotal">$118.19</td>
                 </tr>
             </tbody>
         </table>
     </section>
 
+    <!-- Cart Totals and Coupon Section -->
     <section id="cart-add" class="section-p1">
         <div id="coupon">
             <h3>Apply Coupon</h3>
@@ -101,7 +103,7 @@
             <table>
                 <tr>
                     <td>Cart Subtotal</td>
-                    <td>$ 335</td>
+                    <td id="cart-subtotal">$ 472.76</td>
                 </tr>
                 <tr>
                     <td>Shipping</td>
@@ -109,60 +111,100 @@
                 </tr>
                 <tr>
                     <td><strong>Total</strong></td>
-                    <td><strong>$ 335</strong></td>
+                    <td id="cart-total"><strong>$ 472.76</strong></td>
                 </tr>
             </table>
             <button class="normal">Proceed to checkout</button>
         </div>
     </section>
 
+    <!-- Footer Section -->
     <footer class="section-p1">
-    <div class="col">
-        <img  class="logo" src="images/logo.jpg" alt="">
-        <h4>Contact</h4>
-        <p><strong>Address: </strong>Gitam University,Vishakapatnam</strong></p>
-        <p><strong>Phone:: </strong>+91 333 5555</strong></p>
-        <p><strong>Hours: </strong>10:00-18:00,Mon-Sat</strong></p>
-        <div class="follow">
-            <h4>Follow us</h4>
-            <div class="icon">
-                <i class="fab fa-facebook-f"></i>
-                <i class="fab fa-twitter"></i>
-                <i class="fab fa-instagram"></i>
-                <i class="fab fa-pinterest"></i>
-                <i class="fab fa-youtube"></i>
+        <div class="col">
+            <img class="logo" src="images/logo.jpg" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address: </strong>Gitam University, Vishakapatnam</p>
+            <p><strong>Phone: </strong>+91 333 5555</p>
+            <p><strong>Hours: </strong>10:00-18:00, Mon-Sat</p>
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest"></i>
+                    <i class="fab fa-youtube"></i>
+                </div>
             </div>
         </div>
-    </div>
-     <div class="col">
-        <h4>About</h4>
-        <a href="#">About us</a>
-        <a href="#">Delivery Information</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms & Conditions</a>
-        <a href="#">Contact us</a>
-     </div>
-
-     <div class="col">
-        <h4>My Account</h4>
-        <a href="#">Sign In</a>
-        <a href="#">View Cart</a>
-        <a href="#">My Wishlist</a>
-        <a href="#">Track My Order</a>
-        <a href="#">help</a>
-     </div>
-
-     <div class="col install">
-        <h4>Install App</h4>
-        <p>From App Store or Google Play</p>
-        <div class="row">
-            <img src="images/app.jpg" alt="">
-            <img src="images/play.jpg" alt="">
+        <div class="col">
+            <h4>About</h4>
+            <a href="#">About us</a>
+            <a href="#">Delivery Information</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms & Conditions</a>
+            <a href="#">Contact us</a>
         </div>
-        <p>Secured Payment Gateways </p>
-        <img src="images/pay.png" alt="">
-     </div>
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="#">Sign In</a>
+            <a href="#">View Cart</a>
+            <a href="#">My Wishlist</a>
+            <a href="#">Track My Order</a>
+            <a href="#">Help</a>
+        </div>
+        <div class="col install">
+            <h4>Install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="images/app.jpg" alt="">
+                <img src="images/play.jpg" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="images/pay.png" alt="">
+        </div>
     </footer>
-    <script src="script.js"></script>
+
+    <!-- JavaScript -->
+    <script>
+        // Function to remove an item and update the subtotal
+        function removeItem(itemId) {
+            var item = document.getElementById(itemId);
+            item.parentNode.removeChild(item);
+            updateSubtotal();
+        }
+
+        // Function to update the subtotal when quantity changes
+        function updateItemSubtotal(inputElement) {
+            var row = inputElement.closest("tr");
+            var price = parseFloat(row.cells[3].textContent.replace('$', '')); // Price from the price column
+            var quantity = parseInt(inputElement.value); // Quantity entered by the user
+            var itemSubtotal = price * quantity; // Calculate new subtotal
+
+            // Update the item's subtotal in the DOM
+            row.querySelector(".item-subtotal").textContent = "$" + itemSubtotal.toFixed(2);
+
+            // Update the overall subtotal
+            updateSubtotal();
+        }
+
+        // Function to update the overall cart subtotal
+        function updateSubtotal() {
+            var subtotal = 0;
+            var rows = document.querySelectorAll("#cart tbody tr");
+
+            rows.forEach(function(row) {
+                var itemSubtotal = parseFloat(row.querySelector(".item-subtotal").textContent.replace('$', ''));
+                subtotal += itemSubtotal;
+            });
+
+            // Update the subtotal and total in the DOM
+            var subtotalElement = document.getElementById("cart-subtotal");
+            var totalElement = document.getElementById("cart-total");
+            
+            subtotalElement.textContent = "$ " + subtotal.toFixed(2);
+            totalElement.textContent = "$ " + subtotal.toFixed(2);
+        }
+    </script>
 </body>
 </html>
